@@ -11,7 +11,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: #1a1a1a; // CAMBIO: Fondo oscuro para resaltar la batería
+  background: #1a1a1a; 
   z-index: 1000;
 
   .inner {
@@ -19,20 +19,16 @@
     margin: 0 auto;
     position: relative;
     top: 45%;
-    /* CAMBIO: Dimensiones más estrechas para parecer una pila */
     width: 3.5rem; 
     height: 6rem; 
     
-    /* CAMBIO: Borde blanco y esquinas apenas redondeadas */
     border: 4px solid #ffffff; 
     border-radius: 6px; 
-    background: transparent; // Fondo transparente
+    background: transparent; 
     
-    /* CAMBIO: Reutilizamos el 'asa' (:after) para hacer la punta de la batería */
     &:after {
       content: "";
       position: absolute;
-      /* Posicionamos arriba al centro */
       top: -10px; 
       left: 50%;
       transform: translateX(-50%);
@@ -40,34 +36,29 @@
       display: block;
       width: 1.5rem;
       height: 6px;
-      background: #ffffff; // Relleno sólido blanco
-      border: none; // Sin bordes complejos
-      border-radius: 2px 2px 0 0; // Solo bordes de arriba redondeados
+      background: #ffffff; 
+      border: none; 
+      border-radius: 2px 2px 0 0; 
     }
 
-    /* CAMBIO: Ocultamos el brillo de la taza, no lo necesitamos */
     &:before {
       display: none;
     }
 
     .fill {
       position: absolute;
-      /* CAMBIO: Usamos overflow hidden en el padre o definimos limites aquí */
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
       width: 100%;
-      border-radius: 2px; // Pequeño radio para que encaje
+      border-radius: 2px; 
       
-      /* CAMBIO: Color verde neón de carga */
       background: #00ff88; 
-      box-shadow: 0 0 15px #00ff88; // Un poco de brillo "glow"
+      box-shadow: 0 0 15px #00ff88;
       
-      /* Animación ajustada */
       animation: battery-charge 2.5s infinite ease-in-out;
       
-      /* CAMBIO: Ocultamos la "espuma" del café */
       &:after{
         display: none;
       }
@@ -75,10 +66,9 @@
   }
 }
 
-/* CAMBIO: Nueva animación basada en porcentajes en lugar de rem fijos para ser más flexible */
 @keyframes battery-charge {
     0% {
-        top: 100%; // Totalmente abajo (vacía)
+        top: 100%; 
         border-radius: 0 0 2px 2px;
         opacity: 0.5;
     }
@@ -86,7 +76,7 @@
         top: 100%;
     }
     90% {
-        top: 0%; // Totalmente arriba (llena)
+        top: 0%;
         border-radius: 2px;
         opacity: 1;
     }
@@ -96,7 +86,6 @@
     }
 }
 
-/* Nota: La animación 'liquido' ya no se usa, así que la ignoramos o borramos */
 
 main{
     display: flex;

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -22,21 +21,16 @@
   margin: 0 auto;
   position: relative;
   top: 45%;
-  /* CAMBIO: Dimensiones más estrechas para parecer una pila */
   width: 3.5rem;
   height: 6rem;
-  /* CAMBIO: Borde blanco y esquinas apenas redondeadas */
   border: 4px solid #ffffff;
   border-radius: 6px;
   background: transparent;
-  /* CAMBIO: Reutilizamos el 'asa' (:after) para hacer la punta de la batería */
-  /* CAMBIO: Ocultamos el brillo de la taza, no lo necesitamos */
 }
 
 .loading-wrapp .inner:after {
   content: "";
   position: absolute;
-  /* Posicionamos arriba al centro */
   top: -10px;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -55,28 +49,23 @@
 
 .loading-wrapp .inner .fill {
   position: absolute;
-  /* CAMBIO: Usamos overflow hidden en el padre o definimos limites aquí */
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
   border-radius: 2px;
-  /* CAMBIO: Color verde neón de carga */
   background: #00ff88;
   -webkit-box-shadow: 0 0 15px #00ff88;
           box-shadow: 0 0 15px #00ff88;
-  /* Animación ajustada */
   -webkit-animation: battery-charge 2.5s infinite ease-in-out;
           animation: battery-charge 2.5s infinite ease-in-out;
-  /* CAMBIO: Ocultamos la "espuma" del café */
 }
 
 .loading-wrapp .inner .fill:after {
   display: none;
 }
 
-/* CAMBIO: Nueva animación basada en porcentajes en lugar de rem fijos para ser más flexible */
 @-webkit-keyframes battery-charge {
   0% {
     top: 100%;
@@ -96,6 +85,7 @@
     opacity: 1;
   }
 }
+
 @keyframes battery-charge {
   0% {
     top: 100%;
@@ -116,7 +106,6 @@
   }
 }
 
-/* Nota: La animación 'liquido' ya no se usa, así que la ignoramos o borramos */
 main {
   display: -webkit-box;
   display: -ms-flexbox;
